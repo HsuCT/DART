@@ -1,0 +1,2 @@
+/glade/scratch/nickp/tmp/icon/ICON_L2-2_MIGHTI_Vector-Wind-Green_2020-04-30_v04r001.NC
+/glade/scratch/nickp/tmp/icon/ICON_L2-2_MIGHTI_Vector-Wind-Red_2020-04-30_v04r001.NC

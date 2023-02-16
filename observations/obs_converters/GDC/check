@@ -1,0 +1,66 @@
+netcdf gdc_g1 {
+dimensions:
+	n_timestamps = 2825 ;
+variables:
+	double time(n_timestamps) ;
+	double TN(n_timestamps) ;
+	double UN(n_timestamps) ;
+	double VN(n_timestamps) ;
+	double O1(n_timestamps) ;
+	double O2(n_timestamps) ;
+	double N2(n_timestamps) ;
+	double Rho(n_timestamps) ;
+	double OP(n_timestamps) ;
+	double geod_lon(n_timestamps) ;
+	double geod_lat(n_timestamps) ;
+	double geod_alt(n_timestamps) ;
+}
+
+
+
+
+netcdf gdc_drm_ephem_g1_allphases {
+dimensions:
+	n_timestamps = 2891527 ;
+	vec_comp = 3 ;
+variables:
+	float time(n_timestamps) ;
+		time:comment = "UTC Time in sec since 1970-01-01/00:00:00. First element is set at a reference time, t0 = 2013-03-17/00:00:00" ;
+	float elapsed_time(n_timestamps) ;
+		elapsed_time:comment = "Time in days since mission launch." ;
+	float scpos_j2k(n_timestamps, vec_comp) ;
+		scpos_j2k:comment = "Satellite position in J200 coordinates, in km." ;
+	float scvel_j2k(n_timestamps, vec_comp) ;
+		scvel_j2k:comment = "Satellite velocity in J200 coordinates, in km/s." ;
+	float scpos_gei(n_timestamps, vec_comp) ;
+		scpos_gei:comment = "Satellite position in GEI coordinates, in km." ;
+	float scvel_gei(n_timestamps, vec_comp) ;
+		scvel_gei:comment = "Satellite velocity in GEI coordinates, in km/s." ;
+	float scpos_geo(n_timestamps, vec_comp) ;
+		scpos_geo:comment = "Satellite position in GEO coordinates, in km." ;
+	float scvel_geo(n_timestamps, vec_comp) ;
+		scvel_geo:comment = "Satellite velocity in GEI coordinates, in km/s." ;
+	float scpos_gmag(n_timestamps, vec_comp) ;
+		scpos_gmag:comment = "Satellite position in GMag coordinates, in km." ;
+	float scvel_gmag(n_timestamps, vec_comp) ;
+		scvel_gmag:comment = "Satellite velocity in GMag coordinates, in km/s." ;
+	float geod_lat(n_timestamps) ;
+		geod_lat:comment = "Geodetic latitude, in deg, from -90 --> 90." ;
+	float geod_lon(n_timestamps) ;
+		geod_lon:comment = "Geodetic longitude, in deg from 0 --> 360." ;
+	float geod_alt(n_timestamps) ;
+		geod_alt:comment = "Geodetic altitude, in km." ;
+	float gmag_lat(n_timestamps) ;
+		gmag_lat:comment = "Geomagnetic latitude, in deg, from -90 --> 90." ;
+	float gmag_lon(n_timestamps) ;
+		gmag_lon:comment = "Geomagnetic longitude, in deg from 0 --> 360." ;
+	float sunpos(n_timestamps, vec_comp) ;
+		sunpos:comment = "Solar position unit vector in J200 coordinates (dimensionless units)." ;
+	float eqpm_pos(n_timestamps, vec_comp) ;
+		eqpm_pos:comment = "Prime meridian at the equator unit vector in J200 coordinates (dimensionless units)." ;
+
+// global attributes:
+		:title = "GDC Design Reference Mission (DRM) data." ;
+		:description = "Ephemeris data for satellite G1, covering all science phases from mission day 91 through day 1095." ;
+		:Created = "Fri Jul  2 10:15:01 2021" ;
+}
